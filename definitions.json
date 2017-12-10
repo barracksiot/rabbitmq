@@ -1,0 +1,116 @@
+{
+  "rabbit_version": "3.5.5",
+  "users": [
+    {
+      "name": "__VHOST_DEFAULT_USERNAME__",
+      "password": "__VHOST_DEFAULT_PASSWORD__",
+      "tags": "administrator"
+    },{
+      "name": "__VHOST_INTERNAL_USERNAME__",
+      "password": "__VHOST_INTERNAL_PASSWORD__",
+      "tags": "administrator"
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    },{
+      "name": "internal"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "__VHOST_DEFAULT_USERNAME__",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },{
+      "user": "__VHOST_INTERNAL_USERNAME__",
+      "vhost": "internal",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "parameters": [],
+  "policies": [],
+
+  "exchanges": [
+    {
+      "name": "device_events",
+      "vhost": "internal",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },{
+      "name": "messages",
+      "vhost": "/",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },{
+      "name": "device_enrollment",
+      "vhost": "internal",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },{
+      "name": "device_data",
+      "vhost": "internal",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },{
+      "name": "device_package",
+      "vhost": "internal",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },{
+      "name": "google_analytics",
+      "vhost": "internal",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },{
+      "name": "bigquery",
+      "vhost": "internal",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },{
+      "name": "google_analytics_v1",
+      "vhost": "internal",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },{
+      "name": "webhook",
+      "vhost": "internal",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "queues": [],
+  "bindings": []
+}
